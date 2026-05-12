@@ -1,24 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Task } from "../models/task";
+import { createTask, deleteTask, getTasks, updateTask } from "../services/taskService";
 
 export function useTasks() {
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  function addTask(task: Task) {
-    setTasks(prev => [...prev, task]);
+  useEffect(() => {
+    loadTasks();
+  }, []);
+
+  async function loadTasks() {
+    const data = await getTasks();
+
+    setTasks(data);
   }
 
-  function toggleTask(id: string) {
-    setTasks(prev =>
-      prev.map(t =>
-        t.id === id ? { ...t, done: !t.done } : t
-      )
-    );
+  async function addTask(task: Task) {
+    await createTask(task);
+
+    await loadTasks();
+  }
+
+  async function toggleTask(task: Task) {
+    const updatedTask = {
+      ...task,
+      done: !task.done
+    };
+
+    await updateTask(updatedTask);
+
+    await loadTasks();
+  }
+
+  async function removeTask(id: string) {
+    await deleteTask(id);
+
+    await loadTasks();
   }
 
   return {
     tasks,
     addTask,
-    toggleTask
+    toggleTask,
+    removeTask,
+    loadTasks
   };
 }
