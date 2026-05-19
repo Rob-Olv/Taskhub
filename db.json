@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Estudar",
       "startTime": "19:00",
-      "endTime": "21:00",
+      "endTime": "21:30",
       "done": false
     },
     {
@@ -27,6 +27,13 @@
       "startTime": "11:14",
       "endTime": "13:00",
       "done": false
+    },
+    {
+      "id": "a720cddd-67fa-46ec-961f-7e3473801a40",
+      "title": "Teste Novo visu",
+      "startTime": "23:30",
+      "endTime": "23:50",
+      "done": true
     }
   ]
 }
