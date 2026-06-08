@@ -38,3 +38,14 @@ export async function getTaskById(id: string): Promise<Task> {
 
   return response.json();
 }
+
+export async function getTasksByUser(
+  userId: number
+) {
+  const response =
+    await fetch(
+      `${API_URL}?userId=${userId}`
+    );
+
+  return response.json();
+}

@@ -1,39 +1,72 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Estudar",
-      "startTime": "19:00",
-      "endTime": "21:30",
-      "done": false
-    },
-    {
       "id": "9bf17172-ddac-4c1d-b47b-b724a9a85127",
-      "title": "teste",
+      "userId": 1,
+      "title": "Arrumar a gaveta",
       "startTime": "14:00",
       "endTime": "17:00",
       "done": false
     },
     {
       "id": "f4af319c-7289-4d6e-a32b-a520a8f565ad",
-      "title": "testeNot",
+      "userId": 1,
+      "title": "Engraxar a bota",
       "startTime": "2:15",
       "endTime": "3:00",
       "done": true
     },
     {
       "id": "e7177f52-daf6-479b-913a-83c34a8beab1",
-      "title": "Teste Not",
+      "userId": 1,
+      "title": "Jogar basquete",
       "startTime": "11:14",
       "endTime": "13:00",
       "done": false
     },
     {
       "id": "a720cddd-67fa-46ec-961f-7e3473801a40",
-      "title": "Teste Novo visu",
+      "userId": 1,
+      "title": "Tirar a tinta da parede",
       "startTime": "23:30",
       "endTime": "23:50",
       "done": true
+    },
+    {
+      "id": "fc06ef84-f486-47b4-99ae-0175abe3953b",
+      "userId": "1",
+      "title": "Macerar a navalha",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "done": false
+    },
+    {
+      "id": "083abef8-5448-4dc8-bc2f-37d79a304fe6",
+      "userId": "2",
+      "title": "Varrer a rua",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "done": false
+    },
+    {
+      "id": "19026076-7775-4db5-8896-9e0bd31480fb",
+      "userId": "2",
+      "title": "Lavar o carro",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "done": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "roberto",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "username": "jean",
+      "password": "123"
     }
   ]
 }

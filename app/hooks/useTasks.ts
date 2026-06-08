@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "../contexts/auth-context";
 import { Task } from "../models/task";
-import { createTask, deleteTask, getTasks, updateTask } from "../services/taskService";
+import { createTask, deleteTask, getTasksByUser, updateTask } from "../services/taskService";
 
 export function useTasks() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const { user } = useAuth();
 
   useEffect(() => {
     loadTasks();
   }, []);
 
   async function loadTasks() {
-    const data = await getTasks();
+    if (!user) return;
+
+    const data = await getTasksByUser(user.id);
 
     setTasks(data);
   }

@@ -2,17 +2,20 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import uuid from "react-native-uuid";
+import { useAuth } from "./contexts/auth-context";
 import { createTask } from "./services/taskService";
 
 export default function CreateTask() {
   const [title, setTitle] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const { user } = useAuth();
 
   async function handleCreate() {
     await createTask(
       {
         id: uuid.v4().toString(),
+        userId: user!.id,
         title,
         startTime,
         endTime,
